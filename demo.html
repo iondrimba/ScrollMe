@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>iBrasil Saúde</title>
+    <link href="css/app.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <style type="text/css">
+    body {
+        background: none;
+        height: 8000px;
+    }
+    
+    .content {
+        position: fixed;
+        width: 100%;
+    }
+    
+    .ppp {
+        display: block;
+        padding: 10px;
+        color: #fff;
+        background-color: red;
+        margin: 0 auto;
+        width: 50%;
+        height: 250px;
+    }
+    </style>
+    <script>
+    $(document).ready(function() {
+
+        var ScrollMe = function() {
+            var totalHeight = 0,
+                clientHeight = 0,
+                scrollArea = 0,
+                container,
+                currentScrollPosition = 0,
+                percentScrolled = 0,
+                animations = [];
+
+            this.init = function(target, targetContainer) {
+                totalHeight = target.height();
+                container = targetContainer;
+                clientHeight = container.innerHeight;
+                scrollArea = totalHeight - clientHeight;
+            };
+
+            this.render = function() {
+                currentScrollPosition = container[0].scrollY;
+                percentScrolled = Math.floor((currentScrollPosition / scrollArea) * 100);
+
+                animations.forEach(function(item, index) {
+
+                    var elmt = item.elmt;
+                    item.current = currentScrollPosition - item.init;
+                    item.percent = Math.floor((item.current / item.total) * 100);
+                    if (item.percent <= 100) {
+                        item.start = item.percent * (item.propEnd - item.propStart) / 100;
+                        item.end = (item.propStart + item.start);
+
+                    }
+                    if ((item.percent > 100)) {
+                        item.end = item.propEnd;
+                    }
+                    if ((item.percent < 0)) {
+                        item.end = item.propStart;
+                    }
+
+
+                    var obj = {};
+                    obj[item.prop] = item.end;
+                    if (item.force3D) {
+                        obj['force3D'] = true;
+                    }
+                    TweenLite.to(elmt, .5, obj);
+
+                });
+            };
+
+            this.addAnimation = function(options) {
+                options.total = options.end - options.init;
+                animations.push(options);
+            };
+
+        };
+
+        var scrollMe = new ScrollMe();
+        scrollMe.init($('body'), $(window));
+        scrollMe.addAnimation({
+            elmt: $('.ppp'),
+            init: 0,
+            end: 300,
+            current: 0,
+            prop: 'height',
+            propStart: $('.ppp').height(),
+            propEnd: $('.ppp').height() + 100
+        });
+        scrollMe.addAnimation({
+            elmt: $('.ppp'),
+            init: 300,
+            end: 600,
+            current: 0,
+            prop: 'x',
+            force3D: true,
+            propStart: $('.ppp').position().left,
+            propEnd: $('.ppp').position().left + 100
+        });
+        scrollMe.addAnimation({
+            elmt: $('span'),
+            init: 600,
+            end: 900,
+            current: 0,
+            prop: 'opacity',
+            propStart: 1,
+            propEnd: 0
+        });
+
+
+        function repeatOften() {
+            scrollMe.render();
+            requestAnimationFrame(repeatOften);
+        }
+        requestAnimationFrame(repeatOften);
+    })
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="ppp">
+            <span>HELLO</span>
+        </div>
+    </div>
+</body>
+
+</html>
