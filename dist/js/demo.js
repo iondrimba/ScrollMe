@@ -6,6 +6,22 @@ function Demo() {
     var scrollMe = new ScrollMe();
     console.log('Demo', scrollMe);
 
+    
+	this.scrollMe.init($('body'), $(window));
+
+	//IMAGEM LOGO
+	this.scrollMe.addAnimation({
+	    init: 0,
+	    end: 10,
+	    callBackProperty: function(data, value) {
+	        var obj = {};
+	        obj.scale = value;
+	        TweenLite.to(this.imagemLogo, .3, obj);
+	    }.bind(this),
+	    propStart: 1,
+	    propEnd: this.scaleLogo
+	});
+
 };
 window.demo = new Demo();
 },{"./scrollme":2}],2:[function(require,module,exports){
