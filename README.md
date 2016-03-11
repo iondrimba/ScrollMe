@@ -1,4 +1,4 @@
-# ScrollMe
+# ScrollMe (Work in progress)
 Animate CSS properties on scroll
 
 [![Travis build status](https://travis-ci.org/iondrimba/ScrollMe.svg?branch=master)](https://travis-ci.org/iondrimba/ScrollMe) [![Coverage Status](https://coveralls.io/repos/github/iondrimba/ScrollMe/badge.svg?branch=master)](https://coveralls.io/github/iondrimba/ScrollMe?branch=master)
