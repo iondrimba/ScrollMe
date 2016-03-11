@@ -28,6 +28,7 @@
             this.container = targetContainer;
             this.clientHeight = this.container.innerHeight();
             this.scrollArea = this.totalHeight - this.clientHeight;
+            console.log('SCROLL INIT', this);
 
         };
     };
@@ -54,17 +55,13 @@
     };
     ScrollMe.prototype.render = function(scrollY) {
         this.currentScrollPosition = scrollY;
-
         this.percentScrolled = Math.floor((this.currentScrollPosition / this.scrollArea) * 100);
-
         this.animations.forEach(function(item, index) {
 
             var elmt = item.elmt,
                 out = 0,
                 percentInit = item.init,
                 percentEnd = item.end;
-
-
 
             item.current = this.percentScrolled - percentInit;
             item.percent = Math.floor((item.current / item.total) * 100);
@@ -103,8 +100,6 @@
                     item.callBackLoop(this, item.endX);
                 }
             }
-
-
 
         }.bind(this));
     };

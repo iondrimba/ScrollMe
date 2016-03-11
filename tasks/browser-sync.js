@@ -3,7 +3,7 @@ var browserSync = require('browser-sync').create();
 
 module.exports = function() {
     browserSync.init({
-        server: ""
+        server: "./"
     });
 
     gulp.watch("./dist/css/demo.css").on('change', browserSync.reload);

@@ -5,6 +5,7 @@
     <title>ScrollMe</title>
     <!--CSS /JQUERY / TWEENMAX USED FOR DEMO PURPOSE-->
     <link href="dist/css/demo.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 </head>
 
@@ -12,14 +13,17 @@
     <div class="scrollme-demo">
         <h1>ScrollMe Demo</h1>
         <br>
-        <h3>Animated opacity on scroll</h3>
-        <div class="box"></div>
+        <h3>Animated opacity on scroll from 0% to 20% of total scroll area</h3>
+        <div class="box box-opacity"></div>
         <hr class="divider">
-        <h3>Animate width on scroll</h3>
-        <div class="box"></div>
+        <h3>Animated scale on scroll from 20% to 50% of total scroll area</h3>
+        <div class="box box-scale"></div>
         <hr class="divider">
-        <h3>Animate top on scroll</h3>
-        <div class="box"></div>
+        <h3>Animated rotation on scroll from 50% to 100% of total scroll area</h3>
+        <div class="box box-rotation"></div>
+        <hr class="divider">
+        <h3>Animated left on scroll from 50% to 100% of total scroll area</h3>
+        <div class="box box-left"></div>
     </div>
     <script src="dist/js/demo.js"></script>
 </body>

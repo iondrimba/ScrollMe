@@ -2,43 +2,44 @@ body {
   font-family: sans-serif;
   padding: 20px;
   background-color: #252323;
-  color: #fff; }
+  color: #fff;
+  height: 4000px; }
 
-.scrollme-demo .box {
-  width: 100px;
-  height: 100px;
-  display: block;
-  border-radius: 4px;
-  background-color: #fff; }
+.box-left {
+  position: absolute; }
 
-.scrollme-demo .button {
-  padding: 10px;
-  background-color: #0066FF;
-  color: white;
-  border-radius: 2px;
-  border: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all .3s; }
-
-.scrollme-demo .button:hover {
-  background-color: #074FBB;
-  transition: all .3s; }
-
-.scrollme-demo .button:active {
-  position: relative;
-  top: 1px;
-  left: 1px; }
-
-.scrollme-demo .button:focus {
-  outline: none;
-  background-color: #35FD58;
-  color: #072F14; }
-
-.scrollme-demo .divider {
-  color: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-bottom: solid 1px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.85); }
+.scrollme-demo {
+  position: fixed; }
+  .scrollme-demo .box {
+    width: 100px;
+    height: 100px;
+    display: block;
+    border-radius: 4px;
+    background-color: #fff; }
+  .scrollme-demo .button {
+    padding: 10px;
+    background-color: #0066FF;
+    color: white;
+    border-radius: 2px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s; }
+  .scrollme-demo .button:hover {
+    background-color: #074FBB;
+    transition: all .3s; }
+  .scrollme-demo .button:active {
+    position: relative;
+    top: 1px;
+    left: 1px; }
+  .scrollme-demo .button:focus {
+    outline: none;
+    background-color: #35FD58;
+    color: #072F14; }
+  .scrollme-demo .divider {
+    color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-bottom: solid 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.85); }

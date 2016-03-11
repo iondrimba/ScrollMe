@@ -3,17 +3,22 @@ body {
     padding: 20px;
     background-color: #252323;
     color: #fff;
+    height:4000px;
+}
+
+.box-left {
+    position:absolute;
 }
 
 .scrollme-demo {
-	.box {
-		width:100px;
-		height: 100px;
-		display: block;
-		border-radius: 4px;
-		background-color: #fff;
-	}
-
+    position:fixed;
+    .box {
+        width: 100px;
+        height: 100px;
+        display: block;
+        border-radius: 4px;
+        background-color: #fff;
+    }
     .button {
         padding: 10px;
         background-color: #0066FF;
