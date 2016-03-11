@@ -7,6 +7,9 @@ var gulp = require('gulp');
 gulp.task('lint', require('./tasks/eslint.js'));
 
 //uglify task
+gulp.task('uglify', require('./tasks/uglify.js'));
+
+//GZIP task
 gulp.task('optimize', require('./tasks/optimize.js'));
 
 //watch js/scss/teplate files
@@ -14,7 +17,6 @@ gulp.task('watch', require('./tasks/watch.js'));
 
 // copy
 gulp.task('copy', require('./tasks/copy.js'));
-
 
 //local server
 gulp.task('browser-sync', require('./tasks/browser-sync.js'));
@@ -26,4 +28,4 @@ gulp.task('coveralls', require('./tasks/coveralls.js'));
 gulp.task('default', ['lint', 'browser-sync', 'copy', 'watch']);
 
 // Publish Task
-gulp.task('deploy', ['lint', 'coveralls', 'optimize']);
+gulp.task('deploy', ['lint', 'coveralls', 'uglify', 'optimize']);

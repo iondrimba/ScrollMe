@@ -1,10 +1,8 @@
 var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var uglify = require('gulp-gzip');
+var gzip = require('gulp-gzip');
 
 module.exports = function() {
-  return gulp.src('./src/js/scrollme.js')
-    .pipe(uglify())
+  return gulp.src('./dist/js/scrollme.js')
     .pipe(gzip())
     .pipe(gulp.dest('./dist/'));
 };

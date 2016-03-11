@@ -27,6 +27,7 @@
     "gulp": "^3.9.0",
     "gulp-coveralls": "^0.1.4",
     "gulp-eslint": "^1.0.0",
+    "gulp-gzip": "^1.2.0",
     "gulp-postcss": "^6.0.1",
     "gulp-sass": "^2.0.4",
     "gulp-scss-lint": "^0.3.8",
@@ -36,6 +37,7 @@
     "isarray": "^1.0.0",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
+    "jquery": "^2.1.4",
     "karma": "^0.13.19",
     "karma-browserify": "^5.0.1",
     "karma-coverage": "^0.5.3",
@@ -46,10 +48,7 @@
     "phantomjs-prebuilt": "^2.1.4",
     "stringify": "^3.2.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0",
-    "jquery": "^2.1.4"
+    "watchify": "^3.7.0"
   },
-  "dependencies": {
-    
-  }
+  "dependencies": {}
 }
