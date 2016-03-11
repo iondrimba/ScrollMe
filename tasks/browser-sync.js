@@ -6,6 +6,7 @@ module.exports = function() {
         server: "./"
     });
 
-    gulp.watch("./dist/css/demo.css").on('change', browserSync.reload);
+    gulp.watch("./index.html").on('change', browserSync.reload);
+    gulp.watch("./*.js").on('change', browserSync.reload);
     gulp.watch("./dist/js/*.js").on('change', browserSync.reload);
 };

@@ -1,5 +1,3 @@
-var ScrollMe = require('./scrollme');
-
 function Demo() {
 
     var scrollY = 0;
@@ -10,6 +8,8 @@ function Demo() {
 
     //LISTENS TO SCROLL EVENT
     $(window).scroll(function() {
+        
+        //CROSS PLATFORM SCROLL GET
         scrollY = window.scrollY || window.pageYOffset;
     });
 
@@ -67,7 +67,7 @@ function Demo() {
         callBackProperty: function(data, value) {
             var obj = {};
             obj.x = value;
-            obj.force3d = true;
+            //obj.force3d = true;
             TweenLite.to($('.box-left'), .3, obj);
 
         }.bind(this),
