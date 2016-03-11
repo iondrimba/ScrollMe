@@ -8,7 +8,7 @@ Animate CSS properties on scroll
 ```sh
 $ npm install scrollme --save
 ```
-[Live demo]
+## [Live demo]
 
 
 __Testing:__
@@ -30,7 +30,7 @@ __Structure:__
 │── tasks/
 │── test/(coverage report)
 │
-│── .gitignore
+│── .gitignoregit mer
 │── .travis.yml
 │── karma.conf.js
 │── gulpfile.js
@@ -40,4 +40,4 @@ __Structure:__
 ````
 
 [scss-lint]:<https://github.com/brigade/scss-lint#installation>
-[Live demo]:<http://iondrimba.github.io/ScrollMe/>
+[Live demo]:<http://iondrimba.github.io/scrollme/>
