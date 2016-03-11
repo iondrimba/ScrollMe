@@ -30,7 +30,4 @@ gulp.task('coveralls', require('./tasks/coveralls.js'));
 gulp.task('default', ['scsslint', 'sass', 'lint', 'browserify', 'browser-sync', 'watch']);
 
 // Publish Task
-gulp.task('deploy', ['scsslint', 'sass', 'lint', 'browserify', 'browser-sync', 'uglify']);
-
-//CI
-gulp.task('travis', ['scsslint', 'sass', 'lint', 'browserify', 'coveralls', 'uglify']);
+gulp.task('deploy', ['scsslint', 'sass', 'lint', 'browserify','coveralls', 'uglify']);
