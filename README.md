@@ -12,28 +12,30 @@ $ npm install scrollme --save
 
 
 __Testing:__
- * $ npm test
+ * $ npm test (not working yet)
 
 
 __Structure:__
 
 ````bash
 ├── dist/
-│    ├─── js/
-│    ├─── js/demo.js
-│    ├─── js/scrollme.js
-│    └─── css/demo.css
+│	 └─ scrollme.js.gz
+│    └─ scrollme.js
+│
 │── spec/(jasmine tests)
 │── src/
-│    ├── js/
-│    └── scss/
+│    └─ js/
+│
 │── tasks/
 │── test/(coverage report)
 │
-│── .gitignoregit mer
+│── .gitignore
 │── .travis.yml
-│── karma.conf.js
+│── demo.js
 │── gulpfile.js
+│── index.html
+│── karma.conf.js
+│── LICENSE
 │── lint.yml
 │── package.json
 └── README.md
