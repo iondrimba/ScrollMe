@@ -14,6 +14,26 @@ Animate CSS properties on scroll
 $ npm install scrollme --save
 ```
 
+#### AMD
+
+```js
+define(['scrollme'], function(ScrollMe){
+    var scrollMe = ScrollMe;
+});
+```
+
+#### CommonJS
+
+```js
+var scrollMe = require('scrollme');
+```
+
+#### Global namespace
+
+```js
+var scrollMe = window.ScrollMe;
+```
+
 ### [Live demo]
 
 ### TODO:
