@@ -6,12 +6,12 @@
   "keywords": [
     "Scroll",
     "Animation",
-    "Browserify",
+    "CSS",
     "Gulp"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iondrimba/ScrollMe.git"
+    "url": "git+https://github.com/iondrimba/scrollme.git"
   },
   "scripts": {
     "test": "karma start"

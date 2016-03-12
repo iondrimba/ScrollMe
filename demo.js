@@ -2,13 +2,17 @@ function Demo() {
 
     var scrollY = 0;
 
+
     //INITIATE SCROLLME LIB
-    this.scrollMe = new ScrollMe();
-    this.scrollMe.init($('body'), $(window));
+    var scrollMe = new ScrollMe();
+    var totalScrollAreaHeight = $('body').height();
+    var clientHeight = $(window).innerHeight();
+
+    scrollMe.init(totalScrollAreaHeight, clientHeight);
 
     //LISTENS TO SCROLL EVENT
     $(window).scroll(function() {
-        
+
         //CROSS PLATFORM SCROLL GET
         scrollY = window.scrollY || window.pageYOffset;
     });
@@ -16,61 +20,48 @@ function Demo() {
 
     //OPACITY
     //SETUP OPACITY ANIMATION FROM 0% TO 20% OF TOTAL SCROLLING AREA
-    this.scrollMe.addAnimation({
+    scrollMe.addAnimation({
         init: 0, //PERCENT
         end: 20, //PERCENT
-        callBackProperty: function(data, value) {
-            var obj = {};
-            obj.opacity = value;
-            TweenLite.to($('.box-opacity'), .3, obj);
-
-        }.bind(this),
+        onUpdate: function(data, value) {
+            TweenLite.to($('.box-opacity'), .3, { opacity: value });
+        },
         propStart: 0,
         propEnd: 1
     });
 
     //SCALE
     //SETUP SCALE ANIMATION FROM 20% TO 50% OF TOTAL SCROLLING AREA
-    this.scrollMe.addAnimation({
+    scrollMe.addAnimation({
         init: 20, //PERCENT
         end: 50, //PERCENT
-        callBackProperty: function(data, value) {
-            var obj = {};
-            obj.scale = value;
-            TweenLite.to($('.box-scale'), .3, obj);
-
-        }.bind(this),
+        onUpdate: function(data, value) {
+            TweenLite.to($('.box-scale'), .3, { scale: value });
+        },
         propStart: 0,
         propEnd: 1
     });
 
     //ROTATION
     //SETUP ROTATION ANIMATION FROM 50% TO 100% OF TOTAL SCROLLING AREA
-    this.scrollMe.addAnimation({
+    scrollMe.addAnimation({
         init: 50, //PERCENT
         end: 100, //PERCENT
-        callBackProperty: function(data, value) {
-            var obj = {};
-            obj.rotation = value;
-            TweenLite.to($('.box-rotation'), .3, obj);
-
-        }.bind(this),
+        onUpdate: function(data, value) {
+            TweenLite.to($('.box-rotation'), .3, { rotation: value });
+        },
         propStart: 0,
         propEnd: 360
     });
 
     //LEFT (depends on postion:relative|absolute)
     //SETUP LEFT ANIMATION FROM 50% TO 100% OF TOTAL SCROLLING AREA
-    this.scrollMe.addAnimation({
+    scrollMe.addAnimation({
         init: 50, //PERCENT
         end: 100, //PERCENT
-        callBackProperty: function(data, value) {
-            var obj = {};
-            obj.x = value;
-            //obj.force3d = true;
-            TweenLite.to($('.box-left'), .3, obj);
-
-        }.bind(this),
+        onUpdate: function(data, value) {
+            TweenLite.to($('.box-left'), .3, { x: value });
+        },
         propStart: 0,
         propEnd: 550
     });
@@ -79,12 +70,12 @@ function Demo() {
     function renderLoop() {
 
         //SENDS CURRENT SCROLLY POSITION TO SCROLLME 
-        this.scrollMe.render(scrollY);
+        scrollMe.render(scrollY);
 
-        requestAnimationFrame(renderLoop.bind(this));
+        requestAnimationFrame(renderLoop);
     };
 
-    requestAnimationFrame(renderLoop.bind(this));
+    requestAnimationFrame(renderLoop);
 
 };
 window.demo = new Demo();

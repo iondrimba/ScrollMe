@@ -5,66 +5,104 @@
     <title>ScrollMe</title>
     <!--CSS /JQUERY / TWEENMAX USED FOR DEMO PURPOSE-->
     <style>
-    body {
-        font-family: sans-serif;
-        padding: 20px;
-        background-color: #252323;
-        color: #fff;
-        height: 4000px;
-    }
-    
-    .scrollme-demo {
-        position: fixed;
-    }
-    
-    .box-left {
-        position: absolute;
-    }
-    
-    .box {
-        width: 100px;
-        height: 100px;
-        display: block;
-        border-radius: 4px;
-        background-color: #fff;
-    }
-    
-    .button {
-        padding: 10px;
-        background-color: #0066FF;
-        color: white;
-        border-radius: 2px;
-        border: none;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all .3s;
-    }
-    
-    .button:hover {
-        background-color: #074FBB;
-        transition: all .3s;
-    }
-    
-    .button:active {
-        position: relative;
-        top: 1px;
-        left: 1px;
-    }
-    
-    .button:focus {
-        outline: none;
-        background-color: #35FD58;
-        color: #072F14;
-    }
-    
-    .divider {
-        color: rgba(255, 255, 255, 0.1);
-        border: none;
-        border-bottom: solid 1px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.85);
-    }
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #252323;
+            color: #fff;
+            height: 4000px;
+        }
+        
+        .scrollme-demo {
+            position: fixed;
+            width: 100%;
+        }
+        
+        strong {
+            font-size: 15pt;
+        }
+        
+        .box-left {
+            position: absolute;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            display: block;
+            border-radius: 4px;
+            background-color: #fff;
+            -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+        }
+        
+        .box-opacity {
+            opacity: 0;
+            background-color: orangered;
+            -webkit-box-shadow: 0px 0px 5px 2px rgba(199, 44, 44, 0.75);
+            -moz-box-shadow: 0px 0px 5px 2px rgba(199, 44, 44, 0.75);
+            box-shadow: 0px 0px 5px 2px rgba(199, 44, 44, 0.75);
+        }
+        
+        .box-scale {
+            transform: scale(0);
+            background-color: #35FD58;
+            -webkit-box-shadow: 0px 0px 5px 2px rgba(57, 156, 6, 0.75);
+            -moz-box-shadow: 0px 0px 5px 2px rgba(57, 156, 6, 0.75);
+            box-shadow: 0px 0px 5px 2px rgba(57, 156, 6, 0.75);
+        }
+        
+        .box-rotation {
+            background-color: #125CE0;
+            -webkit-box-shadow: 0px 0px 5px 2px rgb(9, 54, 134);
+            -moz-box-shadow: 0px 0px 5px 2px rgb(9, 54, 134);
+            box-shadow: 0px 0px 5px 2px rgb(9, 54, 134);
+        }
+        
+        .box-left {
+            background-color: #E6FF00;
+            -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 239, 48, 0.3);
+            -moz-box-shadow: 0px 0px 5px 2px rgba(255, 239, 48, 0.3);
+            box-shadow: 0px 0px 5px 2px rgba(255, 239, 48, 0.3);
+        }
+        
+        .button {
+            padding: 10px;
+            background-color: #0066FF;
+            color: white;
+            border-radius: 2px;
+            border: none;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .3s;
+        }
+        
+        .button:hover {
+            background-color: #074FBB;
+            transition: all .3s;
+        }
+        
+        .button:active {
+            position: relative;
+            top: 1px;
+            left: 1px;
+        }
+        
+        .button:focus {
+            outline: none;
+            background-color: #35FD58;
+            color: #072F14;
+        }
+        
+        .divider {
+            color: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-bottom: solid 1px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.85);
+        }
     </style>
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
@@ -74,16 +112,16 @@
     <div class="scrollme-demo">
         <h1>ScrollMe Demo</h1>
         <br>
-        <h3>Opacity on scroll from 0% to 20% of total scroll area</h3>
+        <p>Opacity on scroll from <strong>0%</strong> to <strong>20%</strong> of total scroll area</p>
         <div class="box box-opacity"></div>
         <hr class="divider">
-        <h3>Scale on scroll from 20% to 50% of total scroll area</h3>
+        <p>Scale on scroll from <strong>20%</strong> to <strong>50%</strong> of total scroll area</p>
         <div class="box box-scale"></div>
         <hr class="divider">
-        <h3>Rotation on scroll from 50% to 100% of total scroll area</h3>
+        <p>Rotation on scroll from <strong>50%</strong> to <strong>100%</strong> of total scroll area</p>
         <div class="box box-rotation"></div>
         <hr class="divider">
-        <h3>Left on scroll from 50% to 100% of total scroll area</h3>
+        <p>Left on scroll from <strong>50%</strong> to <strong>100%</strong> of total scroll area</p>
         <div class="box box-left"></div>
     </div>
     <script src="dist/scrollme.js"></script>

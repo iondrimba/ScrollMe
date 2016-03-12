@@ -8,18 +8,39 @@ Animate CSS properties on scroll
 ```sh
 $ npm install scrollme --save
 ```
-## [Live demo]
 
+### [Live demo]
 
-__Testing:__
- * $ npm test (not working yet)
+### TODO:
 
+* Write proper tests
+* Write proper documentation
 
-__Structure:__
+### Code:
+
+```sh
+scrollMe.addAnimation({
+    init: 0, //scroll start point percent values
+    end: 20, //scroll end point percent values
+    onUpdate: function(data, value) {
+
+        //TweenLite used for demo
+        TweenLite.to($('.box-opacity'), .3, {opacity:value});
+    },
+    propStart: 0,
+    propEnd: 1
+});
+```
+
+### Testing:
+
+* $ npm test (not working yet)
+
+### Structure:
 
 ````bash
 ├── dist/
-│	 └─ scrollme.js.gz
+│    └─ scrollme.js.gz
 │    └─ scrollme.js
 │
 │── spec/(jasmine tests)

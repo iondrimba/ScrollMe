@@ -11,31 +11,25 @@
         // Global Variables
         root.ScrollMe = factory();
     }
-}(this, function() {
+} (this, function() {
     'use strict';
 
     function ScrollMe() {
         this.totalHeight = 0;
         this.clientHeight = 0;
         this.scrollArea = 0;
-        this.container = {};
         this.currentScrollPosition = 0;
         this.percentScrolled = 0;
         this.animations = [];
-
-        this.init = function(target, targetContainer) {
-            this.totalHeight = target.height();
-            this.container = targetContainer;
-            this.clientHeight = this.container.innerHeight();
+        this.init = function(totalScrollAreaHeight, clientHeight) {
+            this.totalHeight = totalScrollAreaHeight;
+            this.clientHeight = clientHeight;
             this.scrollArea = this.totalHeight - this.clientHeight;
-            console.log('SCROLL INIT', this);
-
         };
     };
 
     ScrollMe.prototype.addAnimation = function(options) {
         options.notNumber = isNaN(options.propStart);
-
         options.total = options.end - options.init;
 
         if (options.notNumber) {
@@ -81,24 +75,8 @@
                 item.endX = item.propStart;
             }
 
-            //UPDATES PROPERTY CONTANTLY
-            if (item.callBackProperty) {
-                item.callBackProperty(this, item.endX);
-            }
-
-            if (this.percentScrolled >= percentInit && this.percentScrolled < percentEnd) {
-
-                //UPDATES PROPERTY INSIDE RANGE
-                if (item.callBackInsideRange) {
-                    item.callBackInsideRange(this, item.endX);
-                }
-
-            } else if (this.percentScrolled >= percentEnd) {
-
-                //UPDATES PROPERTY AFTER RANGE
-                if (item.callBackLoop) {
-                    item.callBackLoop(this, item.endX);
-                }
+            if (item.onUpdate) {
+                item.onUpdate(this, item.endX);
             }
 
         }.bind(this));

@@ -7,6 +7,6 @@ module.exports = function() {
     });
 
     gulp.watch("./index.html").on('change', browserSync.reload);
-    gulp.watch("./*.js").on('change', browserSync.reload);
-    gulp.watch("./dist/js/*.js").on('change', browserSync.reload);
+    gulp.watch("./demo.js").on('change', browserSync.reload);
+    gulp.watch("./dist/*.js").on('change', browserSync.reload);
 };
