@@ -12,16 +12,19 @@ module.exports = function(config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['browserify', 'jasmine'],
+        frameworks: ['browserify', 'jasmine', 'fixture'],
         // list of files / patterns to load in the browser
         files: [
-            'src/scripts/app.js',
+            'dist/vendors/*.js',
+            'dist/scrollme.js',
+            'demo.js',
+            '*.html',
             'spec/*.js'
         ],
         included: false,
         browserify: {
             debug: true,
-            transform: ['stringify', istanbul({
+            transform: [istanbul({
                 defaultIgnore: true
             })],
             extensions: ['.js'],
@@ -31,8 +34,8 @@ module.exports = function(config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'src/scripts/app.js': ['browserify'],
-            'spec/*.js': ['browserify']
+            '*.html': ['html2js'],
+            //'spec/*.js': ['browserify']
         },
         coverageReporter: {
             // specify a common output directory 
@@ -68,7 +71,6 @@ module.exports = function(config) {
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
         logLevel: config.LOG_INFO,
-
 
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: false,

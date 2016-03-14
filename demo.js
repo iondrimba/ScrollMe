@@ -76,6 +76,6 @@ function Demo() {
     };
 
     requestAnimationFrame(renderLoop);
-
 };
+
 window.demo = new Demo();
