@@ -25,7 +25,7 @@ gulp.task('browser-sync', require('./tasks/browser-sync.js'));
 gulp.task('coveralls', require('./tasks/coveralls.js'));
 
 // Default Task
-gulp.task('default', ['lint', 'copy', 'browser-sync','watch']);
+gulp.task('default', ['lint', 'copy', 'browser-sync', 'watch']);
 
 // Publish Task
-gulp.task('deploy', ['lint', 'coveralls', 'uglify', 'optimize']);
+gulp.task('deploy', ['lint', 'copy', 'uglify', 'optimize']);
