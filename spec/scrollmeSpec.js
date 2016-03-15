@@ -63,6 +63,27 @@
 
         });
 
+        it('Percentage value as string should be 100%', function() {
+
+            var elementValue = '0%';
+
+            //add animation to element
+            scrollme.addAnimation({
+                init: 50, //scroll start point percent values
+                end: 100, //scroll end point percent values
+                onUpdate: function(data, value) {
+                    elementValue = value;
+                },
+                propStart: '0%',
+                propEnd: '100%'
+            });
+
+            scrollme.render(7500);
+
+            expect(elementValue).toEqual('100%');
+
+        });
+
 
         it('Should find element', function() {
             var cssClass = '.box.box-rotation';
