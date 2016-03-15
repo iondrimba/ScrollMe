@@ -1,6 +1,5 @@
 // Karma configuration
 // Generated on Tue Feb 02 2016 21:20:59 GMT-0200 (Horário brasileiro de verão)
-var istanbul = require('browserify-istanbul');
 var threshold = require('karma-threshold-reporter');
 
 module.exports = function(config) {
@@ -12,28 +11,20 @@ module.exports = function(config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['browserify', 'jasmine', 'fixture'],
+        frameworks: ['jasmine', 'fixture'],
         // list of files / patterns to load in the browser
         files: [
             'dist/vendors/*.js',
-            'dist/scrollme.js',
+            'src/js/scrollme.js',
             'demo.js',
             '*.html',
             'spec/*.js'
         ],
         included: false,
-        browserify: {
-            debug: true,
-            transform: [istanbul({
-                defaultIgnore: true
-            })],
-            extensions: ['.js'],
-            bundleDelay: 1000
-        },
-
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
+            'src/js/scrollme.js': ['coverage'],
             '*.html': ['html2js']
         },
         coverageReporter: {
@@ -62,10 +53,8 @@ module.exports = function(config) {
         // web server port
         port: 9876,
 
-
         // enable / disable colors in the output (reporters and logs)
         colors: true,
-
 
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
