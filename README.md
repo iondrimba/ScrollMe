@@ -1,4 +1,4 @@
-# scrollme (Work in progress)
+# scrollme
 Animate CSS properties on scroll
 
 [![Travis build status](https://travis-ci.org/iondrimba/scrollme.svg?branch=master)](https://travis-ci.org/iondrimba/scrollme) [![Coverage Status](https://coveralls.io/repos/github/iondrimba/scrollme/badge.svg?branch=master)](https://coveralls.io/github/iondrimba/scrollme?branch=master)
@@ -81,6 +81,21 @@ scrollMe.addAnimation({
 ```
 
 ```js
+//add animation with percentage string values
+scrollMe.addAnimation({
+    init: 0, //scroll start point percent values
+    end: 20, //scroll end point percent values
+    onUpdate: function(data, value) {
+
+        //TweenLite used for demo
+        TweenLite.to($('.box'), .3, {width:value});
+    },
+    propStart: '0%',
+    propEnd: '100%'
+});
+```
+
+```js
 //add rendering loop
 function renderLoop() {
 
@@ -98,31 +113,7 @@ requestAnimationFrame(renderLoop);
 
 * $ npm test (not working yet)
 
-### Structure:
 
-````bash
-├── dist/
-│    └─ scrollme.js.gz
-│    └─ scrollme.js
-│
-│── spec/(jasmine tests)
-│── src/
-│    └─ js/
-│
-│── tasks/
-│── test/(coverage report)
-│
-│── .gitignore
-│── .travis.yml
-│── demo.js
-│── gulpfile.js
-│── index.html
-│── karma.conf.js
-│── LICENSE
-│── lint.yml
-│── package.json
-└── README.md
-````
 
 [scss-lint]:<https://github.com/brigade/scss-lint#installation>
 [Live demo]:<http://iondrimba.github.io/scrollme/>
