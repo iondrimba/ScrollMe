@@ -84,6 +84,50 @@
 
         });
 
+        it('Percentage value as string should be between 0% and 100%', function() {
+
+            var elementValue = '0%';
+
+            //add animation to element
+            scrollme.addAnimation({
+                init: 50, //scroll start point percent values
+                end: 100, //scroll end point percent values
+                onUpdate: function(data, value) {
+                    elementValue = value;
+                },
+                propStart: '0%',
+                propEnd: '100%'
+            });
+
+            scrollme.render(3000);
+
+            expect(elementValue).not.toBe('0%');
+            expect(elementValue).not.toBe('100%');
+
+        });
+
+        it('Should reset array of elements to animate', function() {
+
+            var elementValue = '0%';
+
+            //add animation to element
+            scrollme.addAnimation({
+                init: 50, //scroll start point percent values
+                end: 100, //scroll end point percent values
+                onUpdate: function(data, value) {
+                    elementValue = value;
+                },
+                propStart: '0%',
+                propEnd: '100%'
+            });
+
+            scrollme.render(3000);
+
+            scrollme.reset();
+
+            expect(scrollme.animations.length).toEqual(0);
+
+        });
 
         it('Should find element', function() {
             var cssClass = '.box.box-rotation';
