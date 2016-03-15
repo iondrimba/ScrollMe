@@ -38,8 +38,11 @@ var scrollMe = window.ScrollMe;
 
 ### TODO:
 
-* Write proper tests
 * Write proper documentation
+
+### Testing:
+
+* $ npm test
 
 ### Code:
 
@@ -107,11 +110,6 @@ function renderLoop() {
 
 requestAnimationFrame(renderLoop);
 ```
-
-
-### Testing:
-
-* $ npm test (not working yet)
 
 
 
