@@ -1,6 +1,6 @@
 {
   "name": "scrollme",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Animate css properties on scroll.",
   "main": "gulpfile.js",
   "keywords": [
@@ -21,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.11.1",
+    "es6-promise": "^3.1.2",
     "gulp": "^3.9.0",
     "gulp-coveralls": "^0.1.4",
     "gulp-eslint": "^1.0.0",
