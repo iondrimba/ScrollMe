@@ -11,7 +11,7 @@
         // Global Variables
         root.ScrollMe = factory();
     }
-} (this, function() {
+}(this, function() {
     'use strict';
 
     function ScrollMe() {
@@ -21,9 +21,10 @@
         this.currentScrollPosition = 0;
         this.percentScrolled = 0;
         this.animations = [];
-        this.init = function(totalScrollAreaHeight, clientHeight) {
-            this.totalHeight = totalScrollAreaHeight;
-            this.clientHeight = clientHeight;
+
+        this.init = function(totalScrollArea, visibleScrollArea) {
+            this.totalHeight = totalScrollArea;
+            this.clientHeight = visibleScrollArea;
             this.scrollArea = this.totalHeight - this.clientHeight;
         };
     };
@@ -32,6 +33,7 @@
         options.notNumber = isNaN(options.propStart);
         options.total = options.end - options.init;
 
+        //check values for string percentage like '89%'
         if (options.notNumber) {
             options.startNum = Number(options.propStart.replace(/\D/g, ''));
             options.endNum = Number(options.propEnd.replace(/\D/g, ''));
@@ -48,8 +50,10 @@
         this.animations = [];
     };
     ScrollMe.prototype.render = function(scrollY) {
+
         this.currentScrollPosition = scrollY;
         this.percentScrolled = Math.floor((this.currentScrollPosition / this.scrollArea) * 100);
+
         this.animations.forEach(function(item, index) {
 
             var elmt = item.elmt,
@@ -83,4 +87,4 @@
     };
 
     return ScrollMe;
-}));
+}))
