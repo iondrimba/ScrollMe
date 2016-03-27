@@ -10,12 +10,8 @@ install:
   - npm install gulp -g
   - npm install
 test_script:
-  # Output useful info for debugging.
-  - node --version && npm --version
-  # We test multiple Windows shells because of prior stdout buffering issues
-  # filed against Grunt. https://github.com/joyent/node/issues/3584  
-  - gulp deploy
-  - npm test 
+  - npm test
+  - gulp deploy 
 build: off
 matrix:
   fast_finish: true
