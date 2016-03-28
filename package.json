@@ -1,6 +1,6 @@
 {
   "name": "scrollme",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Animate css properties on scroll.",
   "main": "gulpfile.js",
   "keywords": [
