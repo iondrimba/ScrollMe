@@ -1,7 +1,7 @@
 # scrollme
 Animate CSS properties on scroll
 
-[![Travis build status](https://travis-ci.org/iondrimba/scrollme.svg?branch=master)](https://travis-ci.org/iondrimba/scrollme) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva/branch/master?svg=true)](https://ci.appveyor.com/project/iondrimba/scrollme/branch/master) [![Coverage Status](https://coveralls.io/repos/github/iondrimba/scrollme/badge.svg?branch=master)](https://coveralls.io/github/iondrimba/scrollme?branch=master)
+[![Travis build status](https://travis-ci.org/iondrimba/scrollme.svg?branch=master)](https://travis-ci.org/iondrimba/scrollme) [![Build status](https://ci.appveyor.com/api/projects/status/ogcwtkm2fgsc7j4x?svg=true)](https://ci.appveyor.com/project/iondrimba/scrollme) [![Coverage Status](https://coveralls.io/repos/github/iondrimba/scrollme/badge.svg?branch=master)](https://coveralls.io/github/iondrimba/scrollme?branch=master)
 
 ### Requires:
 
