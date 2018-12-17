@@ -30,7 +30,7 @@
     "gulp-watch": "^4.3.5",
     "isarray": "^1.0.0",
     "jasmine": "^2.4.1",
-    "jasmine-core": "^2.4.1",
+    "jasmine-core": "^3.3.0",
     "karma": "^0.13.19",
     "karma-coverage": "^0.5.3",
     "karma-fixture": "^0.2.6",
